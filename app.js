@@ -6,6 +6,9 @@ const bodyParser = require('koa-bodyparser');
 const app = new Koa();
 
 app.use(bodyParser());
+
+const Cors = require('koa2-cors')
+app.use(Cors())
 // request.method可以获取请求方法。
 // get，post或者其他类型(request对象被封在ctx内，所以也可以ctx.method获取)
 // app.use(async (ctx) => {
