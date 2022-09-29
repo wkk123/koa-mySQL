@@ -7,7 +7,7 @@ const app = new Koa();
 
 app.use(bodyParser());
 
-const Cors = require('koa2-cors')
+const Cors = require('koa-cors')
 app.use(Cors())
 // request.method可以获取请求方法。
 // get，post或者其他类型(request对象被封在ctx内，所以也可以ctx.method获取)
@@ -44,10 +44,10 @@ const router = require('./router');
 // 调用router.routes()来组装匹配好的路由，返回一个合并好的中间件
 // 调用router.allowedMethods()获得一个中间件，当发送了不符合的请求时，会返回 `405 Method Not Allowed` 或 `501 Not Implemented`
 app.use(router.routes());
-app.use(router.allowedMethods({ 
-    // throw: true, // 抛出错误，代替设置响应头状态
-    // notImplemented: () => '不支持当前请求所需要的功能',
-    // methodNotAllowed: () => '不支持的请求方式'
+app.use(router.allowedMethods({
+	// throw: true, // 抛出错误，代替设置响应头状态
+	// notImplemented: () => '不支持当前请求所需要的功能',
+	// methodNotAllowed: () => '不支持的请求方式'
 }));
 
 //监听端口

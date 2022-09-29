@@ -12,8 +12,10 @@ const query = (sql, val) => {
       } else {
         connection.query(sql, val, (err, fields) => {
           if (err) {
+            console.log('连接失败：',err)
             reject(err);
           } else {
+            console.log('数据库连接成功~')
             resolve(fields);
           }
           connection.release();
