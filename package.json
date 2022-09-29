@@ -1,0 +1,17 @@
+{
+  "name": "my_koa2_mysql",
+  "version": "1.0.0",
+  "description": "koa2_mySQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node bin/www"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.13.4",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^12.0.0"
+  }
+}
