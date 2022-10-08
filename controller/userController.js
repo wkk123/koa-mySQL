@@ -6,9 +6,10 @@ class UserController {
 	// 用户注册
 	async register(ctx) {
 		let { name, tel, password } = ctx.request.body
+		console.log('name, tel, password', name, tel, password)
 		const names = await User.getUser(name) //用户名是否重复
 		const tels = await User.getTel(tel) //手机号是否重复
-
+		console.log('names', names, tels)
 		if (tels.length > 0) {
 			ctx.body = { type: 'warning', message: '该手机号已注册' }
 		} else {
@@ -25,7 +26,6 @@ class UserController {
 		let tel = ctx.request.body.tel;
 		let password = ctx.request.body.password;
 		const res = (await User.getTel(tel))[0];
-		console.log('res', res);
 		if (res) {
 			if (res.password == password) {
 				ctx.body = {
