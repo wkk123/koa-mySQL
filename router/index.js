@@ -29,4 +29,10 @@ router.post('/register', UserController.register)
 //用户信息登录
 router.post('/login', UserController.login)
 
+router.delete('/deleteUser', UserController.deleteUser)
+
+router.put('/upDateUser', UserController.upDateUser)
+
+router.post('/addUser', UserController.addUser)
+
 module.exports = router

@@ -1,3 +1,4 @@
+//数据库配置文件
 const mysqlConfig = {
   user: "root", //账号
   password: "12345678", //密码
